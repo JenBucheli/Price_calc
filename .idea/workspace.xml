@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82db0d0b-3efe-494d-b32b-ff658203a6d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/Connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/CustomerGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/CustomerGroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +34,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/" />
+      <recent name="$PROJECT_DIR$/Model" />
       <recent name="$PROJECT_DIR$/View" />
     </key>
   </component>
@@ -48,6 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1616493229807</updated>
       <workItem from="1616493231123" duration="1591000" />
+      <workItem from="1616497241900" duration="3365000" />
     </task>
     <servers />
   </component>
