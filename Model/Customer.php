@@ -20,6 +20,14 @@ class Customer
         $this->variable_discount = $variable_discount;
     }
 
+    public static function loadFromDatabase(int $id, string $firstname, string $lastname, int $group_ID, int $fixed_discount, int $variable_discount) : Customer
+    {
+        $customer = new Customer($firstname, $lastname, $group_ID, $fixed_discount, $variable_discount);
+        $customer->id = $id;
+        return $customer;
+    }
+
+
     /**
      * @return int
      */
