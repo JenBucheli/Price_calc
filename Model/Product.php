@@ -6,6 +6,7 @@ class Product
     private int $product_ID;
     private string $name;
     private int $price;
+    private int $id;
 
     public function __construct(int $product_ID, string $name, string $price)
     {
