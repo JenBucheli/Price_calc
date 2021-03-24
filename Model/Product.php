@@ -3,13 +3,13 @@
 
 class Product
 {
-    private int $productID;
+    private int $product_ID;
     private string $name;
     private int $price;
 
-    public function __construct(int $productID, string $name, string $price)
+    public function __construct(int $product_ID, string $name, string $price)
     {
-        $this->productID = $productID;
+        $this->product_ID = $product_ID;
         $this->name = $name;
         $this->price = $price;
     }
@@ -17,9 +17,9 @@ class Product
     /**
      * @return int
      */
-    public function getProductID()
+    public function getProduct_ID()
     {
-        return $this->productID;
+        return $this->product_ID;
     }
 
     /**
