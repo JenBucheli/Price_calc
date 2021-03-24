@@ -27,9 +27,8 @@ class CustomerLoader
                 $lastName,
                 $group_ID,
                 $fixed_discount,
-                $variable_discount
-            );
+                $variable_discount);
         }
-        return $customers;
+        return $products;
     }
 }
