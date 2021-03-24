@@ -10,8 +10,6 @@ class HomeController
         $this->db = new Connection;
     }
 
-
-
-
+    public function
 }
 
