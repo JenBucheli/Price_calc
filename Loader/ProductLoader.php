@@ -14,14 +14,16 @@ class ProductLoader
 
     public static function getAllProducts(Pdo $pdo): array
     {
-        $query=$pdo->query('select * from product ORDER BY name');
-        $raw_products= $query->fetchAll();
+        $query = $pdo->query('select * from product ORDER BY name');
+        $raw_products = $query->fetchAll();
 
-        $products=[];
-        foreach ($raw_products AS ['id'=>$id,'name'=>$name,'price'=>$price]){
-            $products[]=Product::loadProductDatabase(
+        $products = [];
+        foreach ($raw_products as ['id' => $id, 'name' => $name, 'price' => $price]) {
+            $products[] = Product::loadProductDatabase(
                 $id,
                 $name,
                 $price);
+        }
+        return $products;
     }
 }
