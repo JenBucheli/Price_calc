@@ -9,7 +9,9 @@ require 'config.php';
 
 $controller = new HomeController();
 
-$controller->dropCustomers($_GET, $_POST);
+$controller->render($_GET, $_POST);
+
+
 
 
 

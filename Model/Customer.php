@@ -2,7 +2,7 @@
 
 class Customer
 {
-    private int $id;
+    private int $customer_ID;
     private string $firstname;
     private string $lastname;
     private int $group_ID;
@@ -10,9 +10,9 @@ class Customer
     private int $variable_discount;
 
 
-    public function __construct(int $id, string $firstname, string $lastname, int $group_ID, int $fixed_discount, int $variable_discount)
+    public function __construct(int $customer_ID, string $firstname, string $lastname, int $group_ID, $fixed_discount, int $variable_discount)
     {
-        $this->id = $id;
+        $this->customer_ID = $customer_ID;
         $this->firstname = $firstname;
         $this->lastname = $lastname;
         $this->group_ID = $group_ID;
@@ -20,10 +20,10 @@ class Customer
         $this->variable_discount = $variable_discount;
     }
 
-    public static function loadFromDatabase(int $id, string $firstname, string $lastname, int $group_ID, int $fixed_discount, int $variable_discount) : Customer
+    public static function loadFromDatabase(int $id, string $firstname, string $lastname, int $group_ID,  $fixed_discount, int $variable_discount) : Customer
     {
-        $customer = new Customer($firstname, $lastname, $group_ID, $fixed_discount, $variable_discount);
-        $customer->id = $id;
+        $customer = new Customer($id, $firstname, $lastname, $group_ID, $fixed_discount, $variable_discount);
+        $customer->customer_ID = $id;
         return $customer;
     }
 
@@ -31,9 +31,9 @@ class Customer
     /**
      * @return int
      */
-    public function getId()
+    public function getId() :?int
     {
-        return $this->id;
+        return $this->customer_ID;
     }
 
     /**
@@ -60,6 +60,13 @@ class Customer
         return $this->group_ID;
     }
 
+    /**
+     * @return int
+     */
+    public function getFixedDiscount(): ?int
+    {
+        return $this->fixed_discount;
+    }
     /**
      * @param int $fixed_discount
      */

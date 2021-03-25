@@ -9,12 +9,10 @@ class HomeController
     public function __construct() {
         $this->db = new Connection;
     }
-    public function dropCustomers(array $GET, array $POST) {
-        $customers = CustomerLoader::getAllCostumers($this->db);
-        require 'View/homepage.php';
-    }
 
-    public function dropProducts(array$GET, array$Post){
+    public function render(array $GET, array $POST){
+
+        $customers = CustomerLoader::getAllCustomers($this->db);
         $products = ProductLoader::getAllProducts($this->db);
         require 'View/homepage.php';
     }

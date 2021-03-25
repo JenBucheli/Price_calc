@@ -8,7 +8,7 @@ class Product
     private int $price;
     private int $id;
 
-    public function __construct(int $product_ID, string $name, string $price)
+    public function __construct(int $product_ID, string $name, int $price)
     {
         $this->product_ID = $product_ID;
         $this->name = $name;
@@ -17,7 +17,7 @@ class Product
 
     public static function loadProductDatabase(int $id, string $name, int $price) : Product
     {
-        $product = new Product($name, $price);
+        $product = new Product($id,$name, $price);
         $product->id = $id;
         return $product;
     }

@@ -19,19 +19,33 @@
         <!-- Example single danger button -->
         <div class="btn-group">
             <button type="button" class="btn btn-success btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Products
+                Customer
             </button>
             <div class="dropdown-menu">
 
-                <?php  /** @var Product $product */
-                foreach ((array)$products  AS $product):?>
-                <a class="dropdown-item" type="<?php echo $product->getProduct_ID()?>"><?php echo $product->getName()?>
+                <?php  /** @var Customer $customer */
+                foreach ((array)$customers  AS $customer):?>
+                <a class="dropdown-item" type="<?php echo $customer->getId()?>"><?php echo $customer->getLastname()?><?php echo $customer->getFirstname()?>
                 </a>
                 <?php endforeach;?>
 
             </div>
         </div>
 
+        <div class="btn-group">
+            <button type="button" class="btn btn-success btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Products
+            </button>
+            <div class="dropdown-menu">
+
+                <?php  /** @var Product $product */
+                foreach ((array)$products  AS $product):?>
+                    <a class="dropdown-item" type="<?php echo $product->getProduct_ID()?>"><?php echo $product->getName()?>
+                    </a>
+                <?php endforeach;?>
+
+            </div>
+        </div>
     </form>
 
 </section>
