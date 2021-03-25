@@ -1,7 +1,7 @@
 <?php
 
 
-class ProductLoader
+class ProductLoader //extends Connection
 {
     public static function getProduct(int$id,Pdo $pdo): Product
     {
@@ -9,13 +9,16 @@ class ProductLoader
         $query->bindValue('id',$id);
         $query->execute();
         $rawProduct = $query->fetch();
+        //var_dump();
         return Product::loadProductDatabase($id, $rawProduct['name'],$rawProduct['price']);
     }
+
 
     public static function getAllProducts(Pdo $pdo): array
     {
         $query = $pdo->query('select * from product ORDER BY name');
         $raw_products = $query->fetchAll();
+        //var_dump($raw_products);
 
         $products = [];
         foreach ($raw_products as ['id' => $id, 'name' => $name, 'price' => $price]) {
@@ -25,5 +28,7 @@ class ProductLoader
                 $price);
         }
         return $products;
+
     }
+
 }
