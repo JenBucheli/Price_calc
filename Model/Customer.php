@@ -6,11 +6,11 @@ class Customer
     private string $firstname;
     private string $lastname;
     private int $group_ID;
-    private int $fixed_discount;
-    private int $variable_discount;
+    private ?int $fixed_discount;
+    private ?int $variable_discount;
 
 
-    public function __construct(int $customer_ID, string $firstname, string $lastname, int $group_ID, $fixed_discount, int $variable_discount)
+    public function __construct(int $customer_ID, string $firstname, string $lastname, int $group_ID, ?int $fixed_discount, ?int $variable_discount)
     {
         $this->customer_ID = $customer_ID;
         $this->firstname = $firstname;
@@ -20,7 +20,7 @@ class Customer
         $this->variable_discount = $variable_discount;
     }
 
-    public static function loadFromDatabase(int $id, string $firstname, string $lastname, int $group_ID,  $fixed_discount, int $variable_discount) : Customer
+    public static function loadFromDatabase(int $id, string $firstname, string $lastname, int $group_ID,  ?int $fixed_discount, ?int $variable_discount) : Customer
     {
         $customer = new Customer($id, $firstname, $lastname, $group_ID, $fixed_discount, $variable_discount);
         $customer->customer_ID = $id;
@@ -73,6 +73,14 @@ class Customer
     public function setFixedDiscount($fixed_discount)
     {
         $this->fixed_discount = $fixed_discount;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getVariableDiscount(): ?int
+    {
+        return $this->variable_discount;
     }
 
     /**

@@ -17,8 +17,9 @@ class ProductLoader //extends Connection
     public static function getAllProducts(Pdo $pdo): array
     {
         $query = $pdo->query('select * from product ORDER BY name');
+        $query->execute();
         $raw_products = $query->fetchAll();
-        //var_dump($raw_products);
+
 
         $products = [];
         foreach ($raw_products as ['id' => $id, 'name' => $name, 'price' => $price]) {

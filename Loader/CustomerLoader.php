@@ -16,7 +16,7 @@ class CustomerLoader
 
     public static function getAllCustomers(Pdo $pdo): array
     {
-        $query = $pdo->prepare('select * from customer  ORDER BY lastname');
+        $query = $pdo->prepare('select * from customer  ORDER BY lastname, firstname');
         $query->execute();
         $raw_customers = $query->fetchAll();
 
@@ -34,3 +34,6 @@ class CustomerLoader
         return $customers;
     }
 }
+
+//['fix_discount']===null?0 : intval($fixed_discount['fix_discount'])
+//['variable_discount']===null?0 : intval($variable_discount['fix_discount'])
